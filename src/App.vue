@@ -4,8 +4,10 @@
        <div class="tab">
          <div class="tab-item">
           <a v-link="{ path: '/goods' }">商品</a></div>
-         <div class="tab-item">评论</div>
-         <div class="tab-item">商家</div>
+         <div class="tab-item">
+          <a v-link="{ path: '/ratings' }">评论</a></div>
+         <div class="tab-item">
+          <a v-link="{ path: '/seller' }">商家</a></div>
       </div>
       <router-view></router-view>
   </div>
@@ -14,6 +16,20 @@
 <script>
   import header from './components/header/header.vue'
   export default{
+    data () {
+      return {
+        seller: {}
+      }
+    },
+    created() {
+      const ERR_OK = 0
+      this.$http.get('/api/seller').then((response) => {
+            response = response.body
+             if (response.errcode === ERR_OK) {
+                this.seller = response.data
+            }
+      })
+    },
     components: {
       'v-header': header
     }

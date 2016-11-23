@@ -24,19 +24,19 @@ var apiRouters = express.Router()
 apiRouters.get('/seller', function(req,res){
   res.json({
     errcode:0,
-    seller:seller
+    data:seller
   })
 })
 apiRouters.get('/goods', function(req,res){
   res.json({
     errcode:0,
-    goods:goods
+    data:goods
   })
 })
 apiRouters.get('/ratings', function(req,res){
   res.json({
     errcode:0,
-    ratings:ratings
+    data:ratings
   })
 })
 
