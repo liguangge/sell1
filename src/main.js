@@ -11,7 +11,9 @@ Vue.use(VueResource)
 
 let app = Vue.extend(App)
 
-let router = new VueRouter()
+let router = new VueRouter({
+	'linkActiveClass': 'active'
+})
 
 router.map({
 	'/goods': {
