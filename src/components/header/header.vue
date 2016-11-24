@@ -30,12 +30,13 @@
     		<img :src="seller.avatar" width="100%" height="100%">
     </div>
     <div v-show="detailshow" class="detail">
-    	
+    	<star :score="4.3" :size="48"></star>
     </div>
   </div>
 </template>
 
 <script>
+  import star from 'components/star/star'
   export default {
   	props: {
   		seller: {
@@ -54,6 +55,9 @@
   	},
   	created() {
   		this.classMap = ['decrease', 'discount', 'guarantee', 'invoice', 'special']
+  	},
+  	components: {
+  		star
   	}
   }
 </script>
