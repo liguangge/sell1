@@ -30,7 +30,15 @@
     		<img :src="seller.avatar" width="100%" height="100%">
     </div>
     <div v-show="detailshow" class="detail">
-    	<star :score="seller.score" :size="48"></star>
+    	<div class="detailWrapper clearfix">
+    		<div class="detailMain">
+    			<star :score="seller.score" :size="48"></star>
+    		</div>
+    	</div>
+    	<div class="detailClose" @click="showdetails">
+    		<i class="icon-close"></i>
+    	</div>
+    	
     </div>
   </div>
 </template>
@@ -184,5 +192,16 @@
 		height:100%
 		overflow:hidden
 		background:rgba(7,17,27,0.8)
-
+		.detailWrapper
+			min-height:100%
+			.detailMain
+				margin-top:64px
+				padding-bottom:64px
+		.detailClose
+				position:relative
+				width:32px
+				height:32px
+				margin:-64px auto 0 auto
+				clear:both
+				font-size:32px
 </style>
