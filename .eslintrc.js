@@ -22,6 +22,11 @@ module.exports = {
     'space-before-function-paren':0,
     'key-spacing':0,
     'space-before-blocks':0,
-    'no-mixed-spaces-and-tabs':0
+    'no-mixed-spaces-and-tabs':0,
+    'arrow-spacing':0,
+    'space-in-parens':0,
+    'comma-spacing':0,
+    'space-infix-ops':0,
+    'keyword-spacing':0
   }
 }
