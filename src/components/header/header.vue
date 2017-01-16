@@ -32,7 +32,16 @@
     <div v-show="detailshow" class="detail">
     	<div class="detailWrapper clearfix">
     		<div class="detailMain">
-    			<star :score="seller.score" :size="48"></star>
+    		    <div class="name">{{seller.name}}</div>
+    		    <div class="star-wrapper">
+    		    	<star :score="seller.score" :size="48"></star>
+    		    </div>
+    			<div class="title">
+    				<div class="line"></div>
+    				<div class="text">优惠信息</div>
+    				<div class="line"></div>
+    			</div>
+
     		</div>
     	</div>
     	<div class="detailClose" @click="showdetails">
@@ -194,9 +203,32 @@
 		background:rgba(7,17,27,0.8)
 		.detailWrapper
 			min-height:100%
+			width:100%			
 			.detailMain
 				margin-top:64px
 				padding-bottom:64px
+				.name
+					text-align:center
+					font-size:16px
+					line-height:16px
+					font-weight:700
+				.star-wrapper
+					margin-top:18px
+					padding:2px 0
+					text-align: center
+				.title
+					display:flex
+					width: 80%
+					margin:30px auto 24px auto
+					.line
+						flex:1
+						position:relative
+						top: -6px
+						border-bottom:1px solid rgba(255,255,255,0.2)
+					.text
+						padding: 0 12px
+						font-size:14px
+									
 		.detailClose
 				position:relative
 				width:32px
